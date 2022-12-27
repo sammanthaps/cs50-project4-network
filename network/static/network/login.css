@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;700;900&family=Yatra+One&display=swap");
+
+@font-face {
+  font-family: 'Pico Black';
+  src: url(../fonts/pico_black.TTF);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-image: url(img/background.jpg);
+  cursor: default;
+}
+
+#left {
+  float: left;
+  width: 950px;
+  height: 100%;
+}
+
+#right {
+  float: right;
+  width: 950px;
+  height: 100%;
+}
+
+#login-form, #register-form {
+  
+  width: 630px;
+  height: 700px;
+  position: absolute;
+  top: 150px;
+  right: 180px;
+  border: 1px solid #ffe7ed;
+  border-radius: 20px;
+  background: #ffe7ed;
+  -webkit-box-shadow: 1px 5px 8px #0000007c;
+          box-shadow: 1px 5px 8px #0000007c;
+}
+
+#login-form h1, #register-form h1 {
+  padding-left: 40px;
+  padding-top: 30px;
+  font: 400 2rem 'Bebas Neue';
+  color: #a41034;
+  text-align: left;
+}
+
+#loginForm, #registerForm {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.form-logo {
+  width: 100%;
+  padding-top: 25px;
+  text-align: center;
+}
+
+input, input:focus {
+  margin: 3px auto;
+  padding: 10px 15px;
+  width: 80%;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  background: #ebf5fc;
+  -webkit-box-shadow: inset  -2px -2px 6px #ffffff, inset 2px 2px 6px #0000001a;
+          box-shadow: inset  -2px -2px 6px #ffffff, inset 2px 2px 6px #0000001a;
+  font: 500 0.9rem 'Poppins';
+  color: #a41034;
+}
+
+button {
+  margin: 20px auto;
+  padding: 10px 0;
+  width: 300px;
+
+  border: 1px solid transparent;
+  border-radius: 20px;
+  outline: none;
+
+  background: #ffbacd;
+  -webkit-box-shadow: -2px -2px 6px #ffffff, 2px 2px 6px #00000054;
+  box-shadow: -2px -2px 6px #ffffff, 2px 2px 6px #00000054;
+  
+  font: 700 1.1rem 'Poppins';
+  text-transform: uppercase;
+  color: #a41035;
+}
+
+button:hover {
+  -webkit-box-shadow: 1px -1px 5px #ffffff, -1px 1px 5px #00000054;
+          box-shadow: 1px -1px 5px #ffffff, -1px 1px 5px #00000054;
+  background: linear-gradient(15deg, #ff53b7, #033bf4, #0cf574, #ffbc42, #ff0e4a, #ff53b7, #033bf4, #0cf574, #ffbc42, #ff0e4a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  cursor: pointer;
+}
+
+.alert {
+  border: 1px solid transparent;
+  height: 50px;
+}
+
+.message {
+  margin: 15px 70px;
+  padding: 3px;
+
+  text-align: center;
+
+  border: 1px solid black;
+  border-radius: 30px;
+  background: black;
+  
+  color: #ffbc42;
+  font: 700 1rem 'Poppins';
+}
+
+.login-register-link {
+  margin: 10px 0;
+
+  font: 500 1.1rem 'Poppins';
+  color: #a41034;
+}
+
+.login-register-link a {
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  background: linear-gradient(15deg, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  cursor: pointer; 
+}
+
+.login-register-link a:hover {
+  font-weight: 700;
+
+  background: linear-gradient(15deg, #1a4fff, #ffbc42, #000000, #f81a52, #1a4fff, #000000, #f81a52);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}

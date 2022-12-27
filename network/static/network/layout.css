@@ -1,0 +1,1518 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Raleway:ital,wght@1,500;1,700&family=Roboto+Slab:wght@400;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: 'Pico Black';
+  src: url(fonts/pico_black.TTF) format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: "Roboto Slab";
+  font-size: 16px;
+  color: black;
+  cursor: default;
+}
+
+body a {
+  text-decoration: none;
+}
+
+.left, .right {
+  width: 25%;
+  border-right: 1px solid #a410351f;
+  border-left: 1px solid #a410351f;
+  background: #fff4f6;
+}
+
+#logo {
+  border: 1px solid transparent;
+  text-align: center;
+  display: flexbox;
+}
+
+#logo figcaption {
+  font-family: 'Pico Black';
+  font-size: 4rem;
+  color: #A41034;
+  text-shadow: 1px 1px 4px #4a0717;
+}
+
+#search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 80px;
+  height: 35px;
+  border: 1px solid #FFCCD9;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background: #FFCCD9;
+}
+
+#search input {
+  padding: 0 5px;
+  width: 90%;
+  height: 35px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font: 500 1.1rem "Roboto Slab";
+}
+
+#search button {
+  width: 10%;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: #A41034;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+#search button:hover {
+  background: linear-gradient(45deg, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52);
+  cursor: pointer;
+}
+
+#who-follow {
+  margin-top: 40px;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: #ffffff;
+  border-top: 1px solid #a410351f;
+  border-bottom: 1px solid #a410351f;
+}
+
+#whofollow-title {
+  padding: 10px 0;
+  text-align: center;
+  font: 900 1.2rem "Roboto Slab";
+  color: #A41034;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px #4a071779;
+}
+
+.users {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 80px;
+  border-top: 1px solid #a410351f;
+  cursor: pointer;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+}
+
+.profile-pic img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid #a410351f;
+}
+
+.profile-info {
+  width: 255px;
+  height: 100%;
+}
+
+.name {
+  padding: 5px 0 3px 8px;
+  text-transform: capitalize;
+  font: 700 1.1rem "Roboto Slab";
+  font-size: 1rem;
+  color: #A41034;
+}
+
+.username {
+  padding: 0 8px;
+  text-transform: lowercase;
+  font: 700 1rem "Roboto Slab";
+  font-size: 0.9rem;
+  color: #636363c4;
+}
+
+.follow {
+  padding-right: 8px;
+  width: 100px;
+  height: 100%;
+}
+
+.follow input {
+  margin: 30px 0;
+  width: 100%;
+  line-height: 25px;
+  background: #ffffff;
+  border-radius: 25px;
+  border: 1px solid #A41034;
+  outline: none;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #A41034;
+}
+
+.follow input:hover {
+  background: #A41034;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.followed input {
+  background: #A41034;
+  border-radius: 25px;
+  border: 1px solid #A41034;
+  outline: none;
+  color: #ffffff;
+}
+
+.followed input:hover {
+  background: #ffffff;
+  color: #A41034;
+  cursor: pointer;
+}
+
+.users:hover {
+  background: #fff4f6;
+}
+
+.show-more {
+  margin: 20px auto;
+  width: 36%;
+  padding: 5px 0;
+  border: 2px solid #A41034;
+  border-radius: 50%;
+  text-align: center;
+  font: 900 1.2rem "Roboto Slab";
+  color: #A41034;
+  cursor: pointer;
+}
+
+.show-more:hover {
+  background: linear-gradient(45deg, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+#center {
+  padding-bottom: 15px;
+  height: 100%;
+  width: 60%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  background: #ffffff;
+}
+
+#center-title {
+  position: -webkit-sticky;
+  position: sticky;
+  /* will scroll along with its container */
+  top: 0;
+  padding: 8px 0 8px 8px;
+  border-bottom: 1px solid #a410351f;
+  font: 900 1.2rem "Roboto Slab";
+  font-size: 1.5rem;
+  color: #A41034;
+  text-shadow: 1px 1px 4px #4a071779;
+  background: #fff4f6;
+}
+
+/* COMPOSE */
+#new-tweet {
+  display: none;
+  padding: 0;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-bottom: 2px solid #a410351f;
+}
+
+#new-tweet textarea, #new-retweet textarea, #edit-tweet textarea {
+  padding: 8px 2px 0 5px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  resize: none;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #a410351f;
+  font: 500 1.1rem "Roboto Slab";
+}
+
+#compose-options, #edit-options {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 9px 0;
+  width: 100%;
+}
+
+#compose-options div, #edit-options div {
+  display: table-cell;
+  width: 33%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+#compose-options div label, #compose-options div input, #edit-options div label, #edit-options div input {
+  display: inline-block;
+  color: #A41034;
+}
+
+#compose-options div input, #edit-options div input {
+  padding: 3px;
+  width: 90%;
+  font: 500 1.1rem "Roboto Slab";
+  border: 1px solid #a410351f;
+  outline: none;
+  opacity: 0.8;
+}
+
+#compose-options div button, #edit-options div button {
+  float: right;
+  padding: 3px;
+  width: 50%;
+  font: 900 1.2rem "Roboto Slab";
+  color: #A41034;
+  border: 2px solid #A41034;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+#compose-options div button:hover, #edit-options div button:hover {
+  background: linear-gradient(45deg, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52);
+  color: #ffffff;
+  border-color: #ffffff;
+  cursor: pointer;
+}
+
+#compose-close, #rt-close, #edit-close {
+  padding: 3px 15px 0 15px;
+  width: 100%;
+  text-align: right;
+}
+
+#compose-close i, #rt-close i, #edit-close i {
+  font-size: 22px;
+  color: #A41034;
+}
+
+#compose-close i:hover, #rt-close i:hover, #edit-close i:hover {
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+#new-retweet, #edit-tweet {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000b2;
+}
+
+#retweet-form, #edit-form {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  padding: 8px;
+  width: 900px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: #fff4f6;
+  border: 2px solid #a410351f;
+  border-radius: 25px;
+}
+
+#retweet-form div, #edit-form div {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+#retweet-form textarea, #edit-form textarea {
+  padding: 8px 5px 0 8px;
+  max-height: 155px;
+  color: #A41034;
+  border: 2px solid #a410351f;
+  border-radius: 25px;
+}
+
+#rt-submit, #edit-submit {
+  float: right;
+}
+
+#rt-submit button, #edit-submit button {
+  margin: 0 20px;
+  padding: 5px;
+  width: 150px;
+  font: 900 1.2rem "Roboto Slab";
+  color: #A41034;
+  background: #ffffff;
+  border: 2px solid #A41034;
+  border-radius: 50%;
+}
+
+#rt-submit button:hover, #edit-submit button:hover {
+  background: linear-gradient(45deg, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52);
+  color: #ffffff;
+  border-color: #ffffff;
+  cursor: pointer;
+}
+
+#rt-preview {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  margin: 5px 0;
+  padding: 5px;
+  border: 1px solid #a410351f;
+  border-radius: 25px;
+}
+
+#rt-preview span {
+  display: inline-block;
+  padding: 3px;
+  font: 700 1rem "Roboto Slab";
+}
+
+#rt-pic img {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #a410351f;
+  border-radius: 50%;
+}
+
+#rt-info {
+  border-left: 1px solid #a410351f;
+}
+
+#rt-name {
+  color: #A41034;
+}
+
+#rt-content {
+  padding: 3px;
+}
+
+#rt-username, #rt-timestamp {
+  color: #636363c4;
+}
+
+#rt-timestamp {
+  float: right;
+  text-align: right;
+}
+
+/* END COMPOSE */
+#posts {
+  display: block;
+  /*height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;*/
+  background: transparent;
+}
+
+.post {
+  border-bottom: 2px solid #ff789e41;
+}
+
+.post:hover {
+  background: #fff4f6;
+  cursor: pointer;
+}
+
+.edit-post {
+  color: #008f40;
+}
+
+.edit-post i:hover {
+  background: #008f4025;
+}
+
+.post-user-body {
+  width: 100%;
+}
+
+.post-info {
+  padding: 15px 70px 0 70px;
+}
+
+/*.post-info:hover {
+  background: #fff4f6;
+}*/
+.post-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.post-user-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.post-user-pic img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid #4a071779;
+}
+
+.post-user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.post-user-info-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2px 10px;
+  width: 75%;
+}
+
+.post-user-fname {
+  padding: 2px 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font: 700 1.1rem "Roboto Slab";
+  color: #A41034;
+}
+
+.post-user-fname:hover, .retweet-fname:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.post-user-name {
+  padding: 3px 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font: 700 1rem "Roboto Slab";
+  color: #777777d3;
+}
+
+.post-user-timestamp {
+  padding: 0 5px;
+  width: 25%;
+  text-align: right;
+  font: 700 0.9rem "Roboto Slab";
+  color: #636363b7;
+}
+
+.post-user-content {
+  display: block;
+  padding: 5px 5px 5px 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font: 500 1.1rem "Roboto Slab";
+}
+
+.post-attachment {
+  padding: 10px 0;
+}
+
+.post-attachment a {
+  text-decoration: none;
+}
+
+.gallery {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-top: 10px;
+  height: 200px;
+  width: 100%;
+  border: 1px solid #a410351f;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.gallery:hover {
+  background: #FFCCD9;
+}
+
+.preview-img {
+  max-width: 300px;
+}
+
+.preview-img img {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-right: 1px solid #ff789e3f;
+}
+
+.preview-caption {
+  padding: 2px 5px;
+}
+
+.caption-title, .caption-link {
+  padding: 5px 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.caption-title {
+  font-weight: 700;
+  color: #A41034;
+}
+
+.caption-body {
+  padding: 0 8px;
+  height: 120px;
+  color: #616161;
+  font-size: 0.9rem;
+}
+
+.caption-body p {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.caption-link {
+  color: #636363b7;
+  font-size: 0.8rem;
+}
+
+.tweet-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+}
+
+.img-link {
+  width: 100%;
+  text-align: center;
+}
+
+.img-link img {
+  max-width: 100%;
+  height: 200px;
+  border: 1px solid #a410351f;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.slide-btn {
+  text-align: center;
+}
+
+.slide-btn .dot {
+  display: inline-block;
+  margin: 5px 2px;
+  height: 15px;
+  width: 15px;
+  background-color: #a410357a;
+  border-radius: 50%;
+  -webkit-transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease;
+}
+
+.slide-btn .active, .slide-btn .dot:hover {
+  background-color: #A41034;
+  cursor: pointer;
+}
+
+.post-options {
+  padding: 8px 120px;
+  text-align: center;
+  font: 900 1.2rem "Roboto Slab";
+  color: #616161;
+}
+
+.post-options span {
+  display: inline-block;
+  margin: 0 40px;
+  font-weight: 700;
+}
+
+.post-options span i {
+  padding: 5px 8px;
+  font-size: 20px;
+}
+
+.post-options span:hover i {
+  border-radius: 50%;
+}
+
+.post-reply {
+  color: #002fff;
+}
+
+.post-reply:hover i {
+  background: #0000ff1e;
+}
+
+.post-reply:hover, .post-like:hover, .post-retweet:hover {
+  cursor: pointer;
+}
+
+.post-like, .liked {
+  color: #A41034;
+}
+
+.post-like:hover i {
+  background: #ff000028;
+}
+
+.post-retweet {
+  color: #ffa500;
+}
+
+.post-retweet:hover i {
+  background: #ffa6002a;
+}
+
+.right {
+  text-align: center;
+}
+
+.verified {
+  color: #A41034;
+}
+
+.check-retweet {
+  margin: 20px 0 10px 0;
+}
+
+.check-retweet span {
+  display: block;
+  width: 100%;
+  line-height: 20px;
+  color: #ffa500;
+  font: 700 1.1rem "Roboto Slab";
+}
+
+.check-retweet i {
+  font-size: 20px;
+}
+
+.check-retweet span:hover {
+  text-decoration: underline;
+}
+
+.retweet {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 10px 3px;
+  width: 100%;
+  margin-bottom: 10px;
+  background: white;
+  border: 1px solid #ffa60063;
+  border-radius: 25px;
+}
+
+.retweet img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid #a410351f;
+}
+
+.retweet:hover {
+  background: #ffa6001f;
+  cursor: pointer;
+}
+
+.retweet-body {
+  width: 100%;
+}
+
+.retweet-user, .retweet-content {
+  padding: 5px 5px 5px 10px;
+  width: 100%;
+}
+
+.retweet-user span {
+  display: inline-block;
+}
+
+.retweet-fname {
+  font: 700 1.1rem "Roboto Slab";
+  color: #A41034;
+}
+
+.retweet-name {
+  font: 700 1rem "Roboto Slab";
+  color: #777777d3;
+}
+
+.retweet-timestamp {
+  float: right;
+  font: 500 0.9rem "Roboto Slab";
+  color: #636363b7;
+}
+
+#comment {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  border-bottom: 3px solid #a410351f;
+}
+
+#make-comment {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-bottom: 3px solid #a410351f;
+}
+
+#make-comment textarea {
+  padding: 5px 0 0 10px;
+  margin: 10px 0 5px 0;
+  height: 30px;
+  width: 100%;
+  outline: none;
+  resize: none;
+  font: 500 1.1rem "Roboto Slab";
+  border: 1px solid #a410351f;
+  border-radius: 20px;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+}
+
+#make-comment textarea:focus {
+  height: 70px;
+}
+
+#make-comment textarea::-webkit-input-placeholder {
+  color: #636363c4;
+}
+
+#make-comment textarea:-ms-input-placeholder {
+  color: #636363c4;
+}
+
+#make-comment textarea::-ms-input-placeholder {
+  color: #636363c4;
+}
+
+#make-comment textarea::placeholder {
+  color: #636363c4;
+}
+
+#comment-submit {
+  padding: 5px;
+  text-align: right;
+}
+
+#comment-submit input {
+  padding: 5px;
+  width: 100px;
+  border: 1px solid #A41034;
+  border-radius: 50%;
+  background: white;
+  font: 700 1rem "Roboto Slab";
+  color: #A41034;
+}
+
+#comment-submit input:hover {
+  background: linear-gradient(45deg, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52);
+  color: #ffffff;
+  border: 1px solid #A41034;
+  cursor: pointer;
+}
+
+#profile, #settings {
+  display: none;
+}
+
+/* SHOW POST   */
+#status {
+  border-bottom: 3px solid #ff789e33;
+}
+
+.status-comments {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 15px 5px;
+  width: 100%;
+  border-bottom: 3px solid #a410351f;
+}
+
+.comment {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 5px;
+  width: 100%;
+  border-bottom: 2px solid #a410351f;
+}
+
+.comment img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid #4a071779;
+}
+
+.comment span {
+  display: inline-block;
+}
+
+.comment i {
+  color: #636363c4;
+}
+
+.comment-info {
+  width: 100%;
+}
+
+.comment-fname {
+  padding-left: 10px;
+  color: #A41034;
+  cursor: pointer;
+}
+
+.comment-fname:hover {
+  text-decoration: underline;
+}
+
+.comment-fname, .comment-username {
+  font: 700 1.1rem "Roboto Slab";
+}
+
+.comment-username, .comment-timestamp {
+  color: #777777d3;
+}
+
+.comment-timestamp {
+  padding-right: 15px;
+  float: right;
+  font: 700 0.9rem "Roboto Slab";
+}
+
+.comment-body {
+  padding: 10px;
+  font: 500 1.1rem "Roboto Slab";
+}
+
+.comment-like {
+  padding: 20px 0;
+  width: 90px;
+  font: 700 1rem "Roboto Slab";
+  color: #A41034;
+  border-left: 2px solid #a410351f;
+}
+
+.comment-like span {
+  display: block;
+  text-align: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.comment-like i {
+  padding: 3px 8px;
+  border-radius: 50%;
+  font-size: 18px;
+  color: #A41034;
+  cursor: pointer;
+}
+
+.comment-like i:hover {
+  background: #ff000028;
+}
+
+/* END SHOW POST */
+#nav-right {
+  width: 100%;
+}
+
+#nav-right a {
+  text-decoration: none;
+}
+
+#logout {
+  padding: 15px 25px;
+  text-align: right;
+}
+
+#logout a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font: 900 1.2rem "Roboto Slab";
+  font-size: 1rem;
+  font-weight: 900;
+  color: #A41034;
+}
+
+#logout a:hover {
+  background: linear-gradient(45deg, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+#current-user-info {
+  height: 300px;
+}
+
+#currentUser-pic img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px solid #a410351f;
+}
+
+#currentUser-name span {
+  display: inline-block;
+  font: 900 1.2rem "Roboto Slab";
+  color: #A41034;
+  cursor: pointer;
+}
+
+#currentUser-name span:hover {
+  text-decoration: underline;
+}
+
+#currentUser-username a {
+  font: 700 1.1rem "Roboto Slab";
+  color: #636363b7;
+  cursor: pointer;
+}
+
+#currentUser-username a:hover {
+  text-decoration: underline;
+}
+
+#currentUser-name, #currentUser-username {
+  line-height: 30px;
+}
+
+#options {
+  margin-top: 45px;
+  background: #ffffff;
+  text-align: left;
+}
+
+#options ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #a410351f;
+  border-bottom: 1px solid #a410351f;
+}
+
+#options li {
+  padding: 5px 0;
+  text-align: center;
+  font: 900 1.2rem "Roboto Slab";
+  font-size: 1.2rem;
+  color: #A41034;
+}
+
+#options span {
+  display: inline-block;
+  width: 115px;
+  text-align: left;
+}
+
+#options span:hover {
+  background: linear-gradient(45deg, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#profile-info {
+  border-bottom: 1px solid #a410351f;
+}
+
+.banner {
+  height: 100px;
+  background: linear-gradient(15deg, #a41035e1, #ae8b3adc, #a41b30e1, #a41035dc, #ae8b3ae1, #a41b30e7);
+  border-bottom: 2px solid #a4103569;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+}
+
+#follow-button {
+  padding: 8px 55px;
+  height: 55px;
+  text-align: right;
+}
+
+#follow-button span {
+  display: inline-block;
+  width: 96%;
+  color: #A41034;
+  background: #ffffff;
+  border-radius: 25px;
+}
+
+#follow-button button {
+  padding: 2px 0;
+  width: 153px;
+  font: 900 1.2rem "Roboto Slab";
+  color: #A41034;
+  background: #ffffff;
+  border: 2px solid #A41034;
+  border-radius: 25px;
+  outline: none;
+}
+
+#follow-button button:hover {
+  cursor: pointer;
+  color: #ffffff;
+  background: linear-gradient(45deg, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52);
+}
+
+#profile-info-pic img {
+  position: absolute;
+  top: 60px;
+  margin-left: 20px;
+  padding: 5px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid #a4103569;
+  background: white;
+}
+
+#profile-info-user {
+  padding: 70px 25px 15px 25px;
+}
+
+#profile-info-user-name {
+  font: 900 1.2rem "Roboto Slab";
+  font-size: 1.5rem;
+  color: #A41034;
+}
+
+#profile-info-username {
+  color: #6e6e6ec4;
+  font: 500 1.1rem "Roboto Slab";
+  font-weight: 700;
+}
+
+#profile-info-biography {
+  padding: 30px 0 20px 0;
+  font: italic 500 1rem 'Raleway';
+}
+
+#profile-info-joined {
+  padding: 10px 0;
+  text-align: center;
+  font: 500 0.9rem "Nunito";
+  color: #6e6e6ec4;
+}
+
+#profile-info-joined i {
+  padding-right: 5px;
+  font-size: 16px;
+}
+
+.counter {
+  display: inline-block;
+  padding: 10px;
+  font: 700 1rem "Roboto Slab";
+}
+
+.counter-info {
+  margin-right: 30px;
+  color: #6e6e6ec4;
+  font-weight: 500;
+}
+
+#profile-info-posts {
+  display: table;
+  width: 100%;
+  border-bottom: 1px solid #a410351f;
+  /*button:focus,*/
+  /*.selected*/
+}
+
+#profile-info-posts button {
+  display: table-cell;
+  padding: 9px 0;
+  width: 33%;
+  border: none;
+  outline: none;
+  background: #ffffff;
+  border-bottom: 4px solid transparent;
+  font: 700 1rem "Roboto Slab";
+  color: #000000;
+}
+
+#profile-info-posts button:hover {
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+#profile-info-posts button:focus {
+  background: #f5f5f5;
+  border-bottom: 4px solid #A41034;
+  color: #A41034;
+}
+
+#profile-posts {
+  height: 370px;
+  overflow-y: auto;
+  font: 500 1.1rem "Roboto Slab";
+  font-size: 1rem;
+}
+
+#profile-posts div {
+  padding: 5px;
+}
+
+#profile-posts span {
+  margin: 0 8px;
+  font-weight: 700;
+}
+
+#profile-posts span i {
+  font-size: 20px;
+}
+
+.profile-post-info {
+  border-bottom: 1px solid #a410351f;
+}
+
+.profile-post-info:hover {
+  cursor: pointer;
+  background: #fff4f6;
+}
+
+.post-user-message {
+  color: #6e6e6ec4;
+}
+
+.post-user-message span {
+  background: linear-gradient(45deg, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.post-user-message span:hover {
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  -o-border-image: linear-gradient(to right, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52) 1;
+     border-image: -webkit-gradient(linear, left top, right top, from(#ff1fa2), color-stop(#1a4fff), color-stop(#008f40), color-stop(#ffbc42), to(#f81a52)) 1;
+     border-image: linear-gradient(to right, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52) 1;
+}
+
+.profile-post-content {
+  padding: 20px;
+  font: 500 1.1rem "Roboto Slab";
+}
+
+.profile-post-user-pic {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #4a071779;
+  border-radius: 50%;
+}
+
+#edit-profile {
+  display: block;
+}
+
+#change-password {
+  display: none;
+}
+
+#profile-pic {
+  text-align: center;
+  height: 100px;
+}
+
+#profile-pic img {
+  position: absolute;
+  top: 60px;
+  left: 44%;
+  padding: 3px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid #a4103569;
+  background: #ffffff;
+}
+
+#edit-pic, #save-pic {
+  text-align: center;
+}
+
+#edit-pic i, #save-pic i {
+  position: absolute;
+  top: 80px;
+  left: 52%;
+  padding: 5px 8px;
+  border-radius: 50%;
+  border: 5px solid #a4103569;
+  background: #e4e4e4;
+  font-size: 20px;
+  color: #a41035d0;
+}
+
+#edit-pic i:hover, #save-pic i:hover {
+  cursor: pointer;
+}
+
+#save-pic {
+  display: none;
+}
+
+#save-pic i {
+  top: 200px;
+}
+
+.account-form div {
+  margin: 15px 0;
+  padding: 5px 0 5px 25%;
+}
+
+.account-form label {
+  padding: 9px 25px;
+  display: block;
+  font: 700 1rem "Roboto Slab";
+  color: #6e6e6ec4;
+}
+
+.account-form input {
+  padding: 5px 25px;
+  width: 500px;
+  border: none;
+  border-bottom: 2px solid #6e6e6ec4;
+  outline: none;
+  font: 500 1.1rem "Roboto Slab";
+}
+
+.account-form textarea {
+  padding: 5px 15px;
+  width: 550px;
+  height: 150px;
+  resize: none;
+  border: 2px solid #6e6e6ec4;
+  outline: none;
+  border-radius: 20px;
+  font: 500 1.1rem "Roboto Slab";
+}
+
+#pic-form {
+  display: none;
+}
+
+#bio {
+  padding-left: 45px;
+}
+
+#div-bio {
+  padding-left: 23%;
+}
+
+#pic-file, #pic-submit {
+  display: none;
+}
+
+.title {
+  padding: 5px 25px;
+  font: 900 1.2rem "Roboto Slab";
+  color: #A41034;
+}
+
+.success, .error {
+  display: none;
+  padding: 2px 0;
+  margin: 0 70px;
+  line-height: 25px;
+  text-align: center;
+  border: 1px solid #a9ffa9;
+  border-radius: 50%;
+  background: #e8ffe8;
+  color: #008000;
+  font: 500 1.1rem "Roboto Slab";
+}
+
+.success span, .error span {
+  display: inline-block;
+  padding-right: 10px;
+  font: 900 1.2rem "Roboto Slab";
+}
+
+.error {
+  border: 1px solid #ffbdbd;
+  background: #ffe6e6;
+  color: #a41034;
+}
+
+.password {
+  margin-top: 50px;
+}
+
+.save-btn {
+  text-align: right;
+}
+
+.save-btn input {
+  margin: 0 30px;
+  width: 120px;
+  font: 900 1.2rem "Roboto Slab";
+  color: #A41034;
+  border: 2px solid #A41034;
+  border-radius: 50%;
+  outline: none;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.save-btn input:hover {
+  background: linear-gradient(45deg, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52);
+  color: #ffffff;
+}
+
+#settings-options {
+  display: table;
+  width: 100%;
+}
+
+#settings-options div {
+  display: table-cell;
+  padding: 5px;
+  width: 50%;
+  text-align: center;
+  border-bottom: 4px solid #a410351f;
+  font: 900 1.2rem "Roboto Slab";
+  color: #A41034;
+}
+
+#settings-options i {
+  padding: 0 8px;
+  font-size: 20px;
+}
+
+#settings-options div:hover {
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+#settings-options #information {
+  border-color: #A41034;
+}
+
+#page-control-btn {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+#page-control-btn button {
+  padding: 3px 0;
+  width: 90px;
+  color: #A41034;
+  background: #fff4f6;
+  border: 2px solid #A41034;
+  border-radius: 50%;
+}
+
+#page-control-btn button:hover {
+  background: linear-gradient(45deg, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52, #ff1fa2, #1a4fff, #008f40, #ffbc42, #f81a52);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+}
+
+#page-control-btn button:disabled {
+  border: 1px solid #999999;
+  background: #cccccc;
+  color: #666666;
+}
+
+#page-control-btn i {
+  font-size: 20px;
+}
+
+.page-btns, #page-num {
+  display: inline-block;
+}
+
+#page-num {
+  padding: 0 5px;
+}
+
+#page-num span {
+  margin: 0 2px;
+  padding: 2px 10px;
+  background: #A41034;
+  border: 1px solid #A41034;
+  border-radius: 50%;
+  border-bottom: 4px solid transparent;
+  color: #fff4f6;
+  font-weight: 700;
+}
+
+#page-num span:hover, #page-num .selected {
+  cursor: pointer;
+  background: #fff4f6;
+  border-bottom: 4px solid #A41034;
+  color: #A41034;
+}
+
+footer {
+  display: block;
+}
+/*# sourceMappingURL=layout.css.map */

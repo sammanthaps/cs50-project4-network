@@ -1,0 +1,125 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block config %}
+{% endblock %}
+
+
+{% block body %}
+  <div id="posts"></div>
+  <div id="profile">
+    <div id="profile-info">
+      <div class="banner"></div>
+      <div id="follow-button">
+        <button id="btn-follow"><span id="span-follow"></span></button>
+      </div>
+      <div id="profile-info-pic"></div>
+      <div id="profile-info-user">
+        <div id="profile-info-user-name"></div>
+        <div id="profile-info-username"></div>
+        <div id="profile-info-biography"></div>
+        <div id="profile-info-joined">
+          <i class="bi bi-calendar-check"></i> Joined November 2021
+        </div>
+        <div id="profile-info-counter">
+          <span id="following" class="counter"></span><span class="counter-info">Following</span>
+          <span id="followers" class="counter"></span><span class="counter-info">Followers</span>
+        </div>
+      </div>
+    </div>
+    <div id="profile-info-posts">     
+      <button id="profile-info-posts-tweets" class="profile-btns" type="button" data-table="tweets">Tweets</button>
+      <button id="profile-info-posts-replies" class="profile-btns" type="button" data-table="replies">Replies</button>
+      <button id="profile-info-posts-likes" class="profile-btns" type="button" data-table="likes">Likes</button>
+    </div>
+    <div id="profile-posts"></div>
+  </div>
+  <div id="settings">
+    <div id="settings-forms">
+      <div class="banner"></div>
+      <div id="settings-options">
+        <div id="information"><i class="bi bi-person-lines-fill"></i> Account Info</div>
+        <div id="security"><i class="bi bi-lock-fill"></i> Security</div>
+      </div>
+      <div id="profile-pic">
+        <img id="profile-pic-file" src="{{ user.picture.url }}">
+      </div>
+      
+      <div id="edit-profile">
+        <label for="pic-file" id="edit-pic"><i title="Choose a file" class="bi bi-image"></i></label>
+        <label for="pic-submit" id="save-pic"><i title="Save profile picture" class="bi bi-check-lg"></i></label>
+
+
+        <div class="account-information">
+          <div class="title">Account Information</div>
+
+          <div id="info-error" class="error"><span>Holy guacamole!</span> You should check in on some of those fields below.</div>
+          <div id="info-success" class="success"><span>Well done!</span> Profile edited successfully.</div>
+
+          <div class="account-form">
+
+            <form id="change-acc-pic" method="POST" enctype="multipart/form-data" action="{% url 'edit_profile_pic' %}">
+              {% csrf_token %}
+              <input id="pic-file" name="picture" type="file" accept="image/png,image/gif,image/jpeg">
+              <input id="pic-submit" type="submit" value="Save">
+            </form>
+
+            <form id="change-acc-info">
+              
+              <div>
+                <label for="account-first-name">First Name</label>
+                <input type="text" id="account-first-name" name="first-name" maxlength="36" value="{{ user.first_name }}" required>
+              </div>
+              <div>
+                <label for="account-last-name">Last Name</label>
+                <input type="text" id="account-last-name" name="last-name" maxlength="36" value="{{ user.last_name }}" required>
+              </div>
+
+              <div>
+                <label for="account-username">Username</label>
+                <input type="text" id="account-username" name="last-name" maxlength="25" value="{{ user.username }}" required>
+              </div>
+          
+              <div id="div-bio">
+                <label id="bio" for="account-bio">Biography</label>
+                <textarea id="account-bio" name="biography" maxlength="379">{{ user.biography }}</textarea>
+              </div>
+              <div class="save-btn">
+                <input type="submit" name="submit" value="Save">
+              </div>     
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="change-password">
+        
+        <div class="account-information">  
+          <div class="title password">Change Password</div>
+
+          <div id="pass-error" class="error"><span>Holy guacamole!</span> You should check in on some of those fields below.</div>
+          <div id="pass-success" class="success"><span>Well done!</span> Profile edited successfully.</div>
+
+          <div class="account-form">
+            <form id="change-acc-pass">
+              <div>
+                <label for="account-first-name">Current Password</label>
+                <input type="password" id="current" name="current-password" maxlength="50">
+              </div>
+              <div>
+                <label for="account-first-name">New Password</label>
+                <input type="password" id="password" name="new-password" maxlength="50">
+              </div>
+              <div>
+                <label for="account-last-name">Confirm Password</label>
+                <input type="password" id="confirmation" name="confirmation" maxlength="50">
+              </div>
+              <div class="save-btn">
+                <input type="submit" value="Save">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

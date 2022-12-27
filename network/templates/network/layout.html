@@ -1,0 +1,155 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'network/img/network.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'network/layout.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    
+    <title>Network. Happening Now.</title>
+  </head>
+  <body>
+    <div class="nav left">
+      <div id="logo">
+        <a href="{% url 'index' %}">
+          <figure>
+            <img src="{% static 'network/img/network.png' %}" alt="harvard logo">
+            <figcaption>network</figcaption>
+          </figure>
+        </a>
+      </div>
+
+      {% if user.is_authenticated %}
+
+        <div id="search">
+          <input type="text" name="search" id="search-bar" maxlength="46">
+          <button type="submit"><i class="bi bi-search"></i></button>
+        </div>
+
+      {% endif %}
+
+    </div>
+
+    <div id="center">
+      <div id="center-title"></div>
+      <div id="new-tweet">
+        <form id="compose-form">
+          <div id="compose-close">
+            <i title="Close" id="compose-close-btn" class="bi bi-x-diamond-fill"></i>
+          </div>
+          <div id="compose-content">
+            <textarea id="compose-body" name="body" cols="50" rows="4" maxlength="379" required></textarea>
+          </div>
+
+          <div id="compose-options">
+            <div class="compose-options">
+              <label for="compose-img" class="symbols"><i class="material-icons-outlined">image</i></label>
+              <input type="text" id="compose-img" name="image" placeholder="Paste the link for your image.">
+            </div>
+            <div class="compose-options">
+              <label for="compose-link" class="symbols"><i class="material-icons-outlined">link</i></label>
+              <input type="url" id="compose-link" name="link" placeholder="Paste the link for your preview.">
+            </div>
+
+            <div id="compose-submit">
+              <button id="btn-submit" type="submit" name="submit">Tweet</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="new-retweet">
+        <form id="retweet-form">
+          <div id="rt-close">
+            <i title="Close" id="rt-close-btn" class="bi bi-x-diamond-fill"></i>
+          </div>
+      
+          <div id="tweet-content">
+            <textarea id="rt-body" name="body" cols="50" rows="4" maxlength="379" required></textarea>
+          </div>
+    
+          <div id="rt-preview"></div>
+    
+          <div id="rt-submit">
+            <button id="rt-submit-btn" type="submit" name="submit">Retweet</button>
+          </div>
+        </form>
+      </div>
+      <div id="edit-tweet">
+        <form id="edit-form">
+          <div id="edit-close">
+            <i title="Close" id="edit-close-btn" class="bi bi-x-diamond-fill"></i>
+          </div>
+      
+          <div id="tweet-content">
+            <textarea id="edit-body" name="body" cols="50" rows="4" maxlength="379" required></textarea>
+          </div>
+
+          <div id="edit-options">
+            <div class="edit-options">
+              <label for="edit-img" class="symbols"><i class="material-icons-outlined">image</i></label>
+              <input type="text" id="edit-img" name="image" placeholder="Paste the link for your image.">
+            </div>
+            <div class="edit-options">
+              <label for="edit-link" class="symbols"><i class="material-icons-outlined">link</i></label>
+              <input type="url" id="edit-link" name="link" placeholder="Paste the link for your preview.">
+            </div>
+          </div>
+        
+          <div id="edit-submit">
+            <button id="edit-submit-btn" type="submit" name="submit">Save</button>
+          </div>
+        </form>
+      </div>
+    
+      {% block body %}
+      {% endblock %}
+
+      <div id="page-control-btn">
+        <div class="page-btns">
+          <button id="previous" title="Previous" disabled><i class="bi bi-arrow-left"></i></button>
+        </div>
+        <div id="page-num"></div>
+        <div class="page-btns">
+          <button id="next" title="Next"><i class="bi bi-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav right">
+      {% if user.is_authenticated %}
+        <div id="nav-right">
+          <div id="logout"><a href="{% url 'logout' %}"><i class="bi bi-box-arrow-right"></i> Logout</a></div>
+          <div id="nav-right-profile">
+            <div id="current-user-info">
+              <div id="show-user-info">
+                <div id="currentUser-pic">
+                  <img src="{{ user.picture.url }}">
+                </div>
+                <div id="currentUser-name">
+                  <a data-username="{{ user.username }}" onclick="build_profile(this.dataset.username)"><span>{{ user.first_name|title }} {{ user.last_name|title }} <i class="bi bi-patch-check-fill verified"></i></span></a>
+                </div>
+                <div id="currentUser-username"><a data-username="{{ user.username }}" onclick="build_profile(this.dataset.username)">&#64;{{ user.username }}</a></div>
+              </div>
+            </div>
+            <div id="options">
+              <ul>
+                <li id="home"><span><i class="bi bi-house"></i> Home</span></li>
+                <li id="explore"><span><i class="bi bi-compass"></i> Explore</span></li>
+                <li id="config"><span><i class="bi bi-gear-wide"></i> Settings</span></li>
+              </ul>
+            </div>
+            <div id="tweet-compose" class="show-more">Tweet</div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'network/index.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+{% endblock %}
+
+{% block profile %}
+  <div id="settings">
+    <div id="settings-forms">
+      <div id="banner"></div>
+      <div id="settings-options">
+        <div id="information"><i class="bi bi-person-lines-fill"></i> Account Info</div>
+        <div id="security"><i class="bi bi-lock-fill"></i> Security</div>
+      </div>
+
+      <div id="edit-profile">
+        <div id="profile-pic">
+          <img id="profile-pic-file" src="{{ user.picture.url }}">
+        </div>
+        <label for="pic-file" id="edit-pic"><i title="Choose a file" class="bi bi-image"></i></label>
+    
+        <div class="account-information">
+          <div class="title">Account Information</div>
+          {% if error %}
+            <div id="info-message" class="error">{{ error }}</div>
+          {% else %}
+            <div id="info-message" class="success">{{ success }}</div>
+          {% endif %}
+          <div class="account-form">
+            <form id="change-acc-info" method="POST" enctype="multipart/form-data" action="{% url 'edit_profile' %}">
+              {% csrf_token %}
+              <input id="pic-file" name="picture" type="file" accept="image/png,image/gif,image/jpeg">
+              <div>
+                <label for="account-first-name">First Name</label>
+                <input type="text" id="account-first-name" name="first-name" maxlength="50" value="{{ user.first_name }}" required>
+              </div>
+              <div>
+                <label for="account-last-name">Last Name</label>
+                <input type="text" id="account-last-name" name="last-name" maxlength="50" value="{{ user.last_name }}" required>
+              </div>
+              <div>
+                <label for="account-user-name">Username</label>
+                <input type="text" id="account-user-name" name="username" maxlength="50" value="{{ user.username }}" required>
+              </div>
+          
+              <div id="div-bio">
+                <label id="bio" for="account-bio">Biography</label>
+                <textarea id="account-bio" name="biography" maxlength="379">{{ user.biography }}</textarea>
+              </div>
+              <div class="save-btn">
+                <input type="submit" name="submit" value="Save">
+              </div>     
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="change-password">
+        <div class="account-information">
+          <div class="title password">Change Password</div>
+          <div class="account-form">
+            <div>
+              <label for="account-first-name">Current Password</label>
+              <input type="password" id="current" name="current-password" maxlength="50">
+            </div>
+            <div>
+              <label for="account-first-name">New Password</label>
+              <input type="password" id="password" name="new-password" maxlength="50">
+            </div>
+            <div>
+              <label for="account-last-name">Confirm Password</label>
+              <input type="password" id="confirmation" name="confirmation" maxlength="50">
+            </div>
+            <div class="save-btn">
+              <input type="submit" value="Save">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

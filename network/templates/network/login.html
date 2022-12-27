@@ -1,0 +1,112 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Network: Sign In or Register</title>
+        <link rel="shortcut icon" href="{% static 'network/img/network.png' %}" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="{% static 'network/login.css' %}">
+    </head>
+
+    <body>
+        <div id="left">
+            <img src="{% static 'network/img/collage.png' %}">
+        </div>
+
+        <div id="right">
+
+        </div>
+
+        {% if login %}
+            <div id="login-form">
+                <div class="form-logo"><img src="{% static 'network/img/network.png' %}" width="90px"></div>
+                <h1>Log In to network</h1>
+                <div class="alert">
+                  {% if message %}
+                    <div class="message">{{ message }}</div>
+                  {% endif %}
+                </div>
+
+                <form action="{% url 'login' %}" method="POST" id="loginForm" class="form-horizontal form-login">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input id="username" name="username" type="text" placeholder="Username" class="form-control input-md" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input id="password" name="password" type="password" placeholder="Password" class="form-control input-md" required>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-success">
+                                Login
+                            </button>
+                        </div>
+                        <p class="login-register-link">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+
+                    </div>
+                </form>
+            </div>
+        {% endif %}
+
+        {% if register %}
+            <div id="register-form">
+                <div class="form-logo"><img src="{% static 'network/img/network.png' %}" width="90px"></div>
+                <h1>Join network today</h1>
+                
+                <div class="alert">
+                  {% if alert %}
+                    <div class="message">{{ alert }}</div>
+                  {% endif %}
+                </div>
+
+                <form action="{% url 'register' %}" method="POST" id="registerForm" class="form-horizontal form-login">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input id="first-name" name="first-name" type="text" placeholder="First name" class="form-control input-md" maxlength="27" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-md-12">
+                          <input id="last-name" name="last-name" type="text" placeholder="Last name" class="form-control input-md" maxlength="27" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input id="username" name="username" type="text" placeholder="Username" class="form-control input-md" maxlength="27" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input id="email" name="email" type="email" 
+                            placeholder="Email" class="form-control input-md" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input id="password" name="password" type="password" placeholder="Password" class="form-control input-md" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input id="confirmation" name="confirmation" type="password" placeholder="Confirm Password" class="form-control input-md" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-success">
+                                Register
+                            </button>
+                        </div>
+                        <p class="login-register-link">Have an account? <a href="{% url 'login' %}">Login</a></p>
+                    </div>
+            </div>
+        {% endif %}
+    </body>
+</html>
